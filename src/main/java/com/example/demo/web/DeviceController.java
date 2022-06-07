@@ -41,15 +41,15 @@ public class DeviceController {
 	}
 
 //	@Scheduled(fixedRate = 1000000000)
-//	@Scheduled(cron = "0 0 0 * * ? *")
+	@Scheduled(cron = "0 0 0 * * ? *")
 //	@Scheduled(cron = "0 0 4 * * ?")
-//	public void scheduleTask() {
-//		List<FileRequest> fileRequestList = fileRequestService.getFileRequestListByOpts(0);
-//		scheduler.schedule(fileRequestList);
-//	}
+	public void scheduleTask() {
+		List<FileRequest> fileRequestList = fileRequestService.getFileRequestListByOpts(0);
+		scheduler.schedule(fileRequestList);
+	}
 
-//	@Scheduled(fixedRate = 1000000000)
-//	@Scheduled(cron = "0 0 0 * * ? *")
+	@Scheduled(fixedRate = 1000000000)
+	@Scheduled(cron = "0 0 0 * * ? *")
 //	@Scheduled(cron = "0 0 7 * * ?")
 	public void copy() {
 		 List<Instance> instanceList = instanceService.getInstanceListByStatus(0);
